@@ -15,6 +15,8 @@ npm run dev
 npm run build
 ```
 
+Don't forget to add details to the empty description and open-graph tags in `src/base.liquidd` before launching your site!
+
 ## Netlify Functions
 
 Tailleaf comes with a sample Netlify Function to get you started. You can duplicate `functions/src/hello.js` to create new functions, but you will need to restart the development server.
@@ -34,3 +36,7 @@ If you are not using Netlify Functions, comment out the `set-base-url` include i
 ## Netlify Redirects
 
 Edit the `src/_redirects` file to use Netlify Redirects. You can read more about using it [here](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file)
+
+## Netlify Build Plugins
+
+Projects, when deployed on Netlify, will run netlify-plugin-image-optim and netlify-plugin-a11y. Builds will fail if accessibility failures are found.

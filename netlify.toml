@@ -2,3 +2,9 @@
   publish = "build"
   command = "npm run build"
   functions = "./functions/build"
+
+[[plugins]]
+package = "netlify-plugin-image-optim"
+
+[[plugins]]
+package = "netlify-plugin-a11y"
