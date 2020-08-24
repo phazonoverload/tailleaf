@@ -1,0 +1,10 @@
+<script>
+const baseURL = () => {
+    const remote = '/.netlify/functions'
+    const local = 'http://localhost:9000'
+    const p = window.location.protocol
+    const h = window.location.hostname
+    if(p == 'file:' || h == 'localhost' || h == '127.0.0.1') return local
+    else return remote
+}
+</script>

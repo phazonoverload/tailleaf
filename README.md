@@ -1,6 +1,6 @@
 # Tailleaf :leaves:
 
-An 11ty boilerplate with Tailwind.
+An 11ty boilerplate with Tailwind and Netlify Functions.
 
 ## Set Up
 
@@ -14,3 +14,23 @@ npm run dev
 ```
 npm run build
 ```
+
+## Netlify Functions
+
+Tailleaf comes with a sample Netlify Function to get you started. You can duplicate `functions/src/hello.js` to create new functions, but you will need to restart the development server.
+
+To call a Netlify Function, use the following code (where `hello` is your function name):
+
+```js
+fetch(baseURL() + '/hello')
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+    })
+```
+
+If you are not using Netlify Functions, comment out the `set-base-url` include in `_layouts/base.liquid`.
+
+## Netlify Redirects
+
+Edit the `src/_redirects` file to use Netlify Redirects. You can read more about using it [here](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file)

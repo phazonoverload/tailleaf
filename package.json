@@ -4,12 +4,14 @@
     "description": "An 11ty boilerplate with Tailwind",
     "main": "index.js",
     "scripts": {
-        "dev": "npm-run-all -p dev:css:watch dev:11ty",
-        "build": "eleventy && npm run build:css",
+        "dev": "npm-run-all -p dev:css:watch dev:11ty dev:netlify",
+        "build": "eleventy && npm run build:css && build:netlify",
         "dev:11ty": "eleventy --serve",
         "dev:css": "postcss ./src/assets/css/style.pcss -o ./build/assets/css/style.css",
+        "dev:netlify": "netlify-lambda serve functions/src",
         "dev:css:watch": "watch 'npm run dev:css' ./src/assets/css",
-        "build:css": "NODE_ENV=production postcss ./src/assets/css/style.pcss -o ./build/assets/css/style.css"
+        "build:css": "NODE_ENV=production postcss ./src/assets/css/style.pcss -o ./build/assets/css/style.css",
+        "build:netlify": "netlify-lambda build functions/src"
     },
     "author": "",
     "license": "ISC",
@@ -19,6 +21,7 @@
         "autoprefixer": "^9.8.6",
         "cssnano": "^4.1.10",
         "html-minifier": "^4.0.0",
+        "netlify-lambda": "^2.0.1",
         "npm-run-all": "^4.1.5",
         "postcss": "^7.0.32",
         "postcss-cli": "^7.1.1",
