@@ -15,7 +15,11 @@ npm run dev
 npm run build
 ```
 
-Don't forget to add details to the empty description and open-graph tags in `src/base.liquidd` before launching your site!
+Don't forget to add details to the empty description and open-graph tags in `src/base.liquid` before launching your site!
+
+## Lazysizes
+
+This boilerplate will automatically lazyload any images with the class `lazyload`.
 
 ## Netlify Functions
 
